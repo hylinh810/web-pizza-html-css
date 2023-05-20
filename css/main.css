@@ -79,14 +79,12 @@ html, body {
 
 .support-desc h1 {
 	color: red;
-    font-size: 18px;
+    font-size: 20px;
     text-transform: capitalize;
     position: relative;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    
 }
-
-
 
 .support-area .single-support {
     display: -moz-flex;
