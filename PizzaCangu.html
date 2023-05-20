@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CIKPAH</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="js/main.js">
+  <style type="text/css">
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #E0F8F7;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #FE2E2E;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.btn{
+  margin-left:auto;
+}
+.btn1 {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn2{
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 6px 14px;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body >
+	<div class="container-fluid"></div>
+<nav class="navbar navbar-inverse navbar-expand-xl  navbar-dark sticky-top">
+  <a class="navbar-brand" href="">
+    <img src="anh/logo.png" alt="Logo" style="width:80px;">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav navbar-nav navbar-right">
+        <a class="nav-link" href="TrangChu1.html"><b class="mau">TRANG CHỦ</b> </a>
+      </li>
+      <li class="nav navbar-nav navbar-right">
+        <a class="nav-link" href="GioiThieu1.html"><b class="mau"> GIỚI THIỆU</b></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="SanPham1.html"><b>SẢN PHẨM</b></a>
+      </li>
+      <li class="nav navbar-nav navbar-right">
+        <a class="nav-link" href="KhuyenMai1.html"><b class="mau">KHUYẾN MÃI</b></a>
+      </li>
+  </ul>
+</div>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <div >
+         <form class="form-inline my-2 my-lg-0">
+      
+     <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+      <a href="SanPham.html" class="btn2"><i class="fa fa-search"></i></a>
+    </form>
+      </div>&emsp;
+
+      <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+    <!-- Giỏ hàng -->
+    <div >
+      <ul class="nav navbar-nav navbar-right">
+      <div><button id="myBtn" style="background-color: #FE2E2E; padding: 0;
+border: none;
+background: none;
+"><li>
+          <a  class="nav-link" href="#" style="color: black"><svg class="bi bi-cart4" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+      </svg><b> Giỏ Hàng</b></a>
+    </li></button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header"> <h2>Giỏ Hàng Của Bạn</h2>
+      <span class="close">&times;</span>
+     
+    </div>
+    <div class="container"> 
+ <table id="cart" class="table table-hover table-condensed"> 
+  <thead> 
+   <tr> 
+    <th></th>
+    <th style="width:50%">Tên sản phẩm</th> 
+    <th style="width:10%">Giá</th> 
+    <th style="width:8%">Số lượng</th> 
+    <th style="width:22%" class="text-center">Thành tiền</th> 
+    <th style="width:10%"> </th> 
+   </tr> 
+   <tr>
+    <th>
+      <img class="cart-item-image" src="anh/hawaii.jpg" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Pizza Hawaii</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">120000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i></button>
+    </th>
+                          
+      </tr>
+      <tr>
+    <th>
+      <img class="cart-item-image" src="anh/haisan.jpg" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Pizza Hải sản</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">135000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i></button>
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <img class="cart-item-image" src="anh/pepsi.jpg" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Pepsi</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">9000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i></button>
+    </th>
+                          
+      </tr>
+      <tr>
+    <th>
+      <img class="cart-item-image" src="anh/KhuyenMai/1.png" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Combo 1</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">157000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i> </button>
+    </th>
+                          
+      </tr>
+  </thead> 
+  <tfoot> 
+   
+   <tr> 
+    <td><a href="SanPham.html" class="btn btn-warning" style="width: 200px"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+    </td> 
+     <td></td><td></td><td></td>
+    <td><a href="#" onclick="alert('Thanh toán thành công!')" class="btn btn-success btn-block" style="width: 150px;">Thanh toán  <i class="fa fa-angle-right"></i> </a>
+    </td> 
+   </tr> 
+  </tfoot> 
+ </table>
+</div>
+  </div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script></div>
+</div>
+     <li class="nav-item dropdown">
+        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action" style="color: black"><img src="anh/avatar.jpg" class="aab" alt="Avatar"  style="width: 25px"> Hy Linh <strong class="caret"></strong></a>
+        <ul class="dropdown-menu">
+          <li><a href="HoSo.html" class="dropdown-item"><i class="fa fa-user-o"></i>Hồ sơ</a></li>
+          <li class="divider dropdown-divider"></li>
+          <li><a href="TrangChu.html" class="dropdown-item"><i class="material-icons violet">&#xE8AC;</i>Đăng xuất</a></li>
+        </ul>
+      </li>
+      </ul>
+    </div>
+
+</nav>
+<hr>
+<div class="container">
+  <table>
+    <tr>
+      <th>
+        <div>
+          <img src="anh/cangu.jpg" style="width: 500px;height: 300px">
+        </div>
+      </th>
+      <th>
+        <div class="card-body" >
+       <h5 class="card-title"><b>Pizza cá ngừ</b></h5>
+        <p class="card-text">Thành phần của Pizza cá ngừ gồm: cá ngừ, nấm, bắp, ớt chuông, phô mai.</p>
+        <p><b>120.000đ</b></p>
+        <p><a href="#" onclick="alert('Đã thêm vào giỏ hàng!')"  class="btn btn-primary">Mua hàng</a></p>
+ </div>
+      </th>
+    </tr>
+  </table>
+</div>
+ <hr>
+  <footer class="footer-area black-bg pt-60">
+          <div class="container">
+                <div class="footer-top">
+                    <div class="footer-logo text-center">
+                        <a href="index.html"><img src="anh/logo.png" alt="footer-logo"></a>
+                        <p>NGON SẠCH RẺ KHỎE <br> Pizza ngon là CIKPAH</p>
+                    </div><br><br><hr>
+                    <div class="col">
+      <form action="mailto: lethiphuongluong181220@gmail.com" method="get">
+    <center>
+      <table border="1" cellpadding="9px">
+        <td>
+          <center>
+            <b>HỘP THƯ GÓP Ý</b>
+          
+          </center><br>
+            <b>Họ và tên&emsp;:</b> <input cols="70" type="text" name="subject" id="subject"><br> <br>
+          <b>Email&emsp;&emsp;&emsp;:</b>   <input type="text" name=""> <br><br>
+          <b>Nội dung góp ý</b> <br>
+          <textarea rows="7" cols="90" name="body" id="body" ></textarea>
+          <center>
+            <small><b>Cảm ơn đóng góp ý kiến của quý khách</b></small><br>
+            <form style="position: absolute;
+                         top: 50%;
+                                     left: 50%;
+                                     width: 300px;
+                                     height: 1.4em;
+                                     margin-top: -3.7em;
+                                     margin-left: -180px;">
+                           <input value="Gửi" type="submit">
+                        </form>          
+          </center>
+        </td>
+      </table>
+    </center>
+  </form>
+    </div><hr>
+                    <div class="support-area d-flex flex-wrap justify-content-between">
+                        <div class="single-support mb-all-40">
+                            <div class="support-icon">
+                                <img src="anh/mail.png" alt="support-icon">
+                            </div>
+                            <div class="support-desc">
+                                <h1>ltpluong.19it3@sict.udn.vn</h1>
+                                <h1>htylinh.19it3@sict.udn.vn</h1>
+                            </div>
+                        </div>
+                        <div class="single-support mb-all-40">
+                            <div class="support-icon">
+                                <img src="anh/fb.png" alt="support-icon">
+                            </div>
+                            <div class="support-desc">
+                               <h1><a href="https://www.facebook.com/profile.php?id=100008387294906" style="color: red">Lương Lê</a></h1>
+                                <h1><a href="https://www.facebook.com/profile.php?id=100012882978336" style="color: red">Huỳnh Yến Linh</a></h1>
+                            </div>
+                        </div>
+                        <div class="single-support">
+                            <div class="support-icon">
+                                <img src="anh/goi.png" alt="support-icon">
+                            </div>
+                            <div class="support-desc">
+                                <h1>0989055432</h1>
+                                <h1>0345852654</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+    <div class="container">
+  <div class="row">
+    <div class="col">
+      
+    </div>
+    <div class="col-6">
+      <div style="background-color:  #E0F8F7"  style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="anh/vitri.png" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Địa chỉ</h5>
+        <p class="card-text">478 Trần Đại Nghĩa - Ngũ Hành Sơn - Đà Nẵng</p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col">
+      
+    </div>
+</div></div></footer>

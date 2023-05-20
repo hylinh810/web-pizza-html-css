@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CIKPAH</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  	body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxygen', sans-serif;
+    letter-spacing: 1px;
+}
+body img{
+    width: 100%;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    background: url(bg.jpg);
+    background-size: cover;
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 350px;
+    background: rgba(103, 58, 183, 0.7);
+    background-color: #E0F8F7;
+}
+.container .form_content, .container .login_form{
+    position: relative;
+    width: 50%;
+    height: 350px;
+    float: left;
+    box-sizing: border-box;
+}
+.container .form_content{
+    padding: 40px;
+    color: #fff;
+    background-color: #E0F8F7;
+}
+.container .form_content a{
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background: #ff0057;
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.container .login_form{
+    background: #fff;
+    height: 380px;
+    top: -15px;
+    box-shadow: -20px 0 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+.container .login_form h1{
+    color: #262626;
+}
+.container .login_form input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    font-size: 15px;
+}
+.container .login_form input:hover{
+    border: 2px solid #673ab7;
+}
+.container .login_form input[type="submit"]{
+    color: #fff;
+    background: #673ab7;
+    font-size: 16px;
+    transition: 0.5s;
+}
+.container .login_form input[type="button"]:hover{
+    background: #ff0057;
+    border: 2px solid #ff0057;
+}
+.container .login_form a{
+    text-decoration: none;
+    font-weight: bold;
+}
+.form_content img{
+	width: 200px;
+	height: auto;
+	text-align: center;
+}
+
+p{
+	color: black;
+}
+h2{
+	color: red;
+}
+  </style>
+</head>
+<body>
+    <img src="https://i.pinimg.com/736x/30/d0/e0/30d0e0d1b352df0576a07fe905871fe8.jpg?fbclid=IwAR16gLxscvW4DFSHDGPKVvWg0h1GE1A7vZX5uJNFV0LtIOcmVK4jxkbmG_U" alt="">
+	<section>
+        <div class="container">
+            <div class="form_content">
+                <h2>CIKPAH PIZZA</h2>
+                <img src="anh/logo.png" alt="">
+                <hr>
+                <p>Pizza ngon là CIKPAH</p>
+            </div>
+            <div class="login_form">
+                <h1>ĐĂNG KÝ</h1>
+                <form action="">
+                    <input type="text" name="" required="" placeholder="Email">
+                    <input type="password" name="" required="" placeholder="Mật khẩu">
+                    <input type="password" name="" required="" placeholder="Nhập lại mật khẩu">
+                    <a href="TrangChu1.html"><input type="button" onclick="alert('Đăng ký thành công!')" name="" value="Đăng Ký"></a>
+                    <a href="TrangChu.html" style="font-size: 11px">Trở về trang chủ</a>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

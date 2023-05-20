@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CIKPAH</title>
+	<meta charset="utf-8">
+  <link rel="shortcut icon" type="C:/Users/Admin/Downloads/logo.ico" href="/favicon.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <style type="text/css">
+    h4{
+      font-size: 18px;
+    }
+  </style>
+  	
+</head>
+<body>
+	<div class="container-fluid"> </div>
+<nav class="navbar navbar-inverse navbar-expand-xl  navbar-dark sticky-top">
+  <a class="navbar-brand" href="">
+  	<img src="anh/logo.png" alt="Logo" style="width:80px;">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav navbar-nav navbar-right">
+        <a class="nav-link" href="TrangChu.html"><b class="mau">TRANG CHỦ</b> </a>
+      </li>
+      <li class="nav-item active">
+      	<a class="nav-link" href="GioiThieu.html"><b> GIỚI THIỆU</b></a>
+      </li>
+      <li class="nav navbar-nav navbar-right">
+      	<a class="nav-link" href="SanPham.html"><b class="mau">SẢN PHẨM</b></a>
+      </li>
+      <li class="nav navbar-nav navbar-right">
+      	<a class="nav-link" href="KhuyenMai.html"><b class="mau">KHUYẾN MÃI</b></a>
+      </li>
+  </ul>
+</div>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div >
+         <form class="form-inline my-2 my-lg-0">
+      
+      <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+      <a href="TrangChu.html" class="btn2"><i class="fa fa-search"></i></a>
+    </form>
+      </div>&emsp;
+
+      <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+    <!-- Giỏ hàng -->
+    <div >
+      <ul class="nav navbar-nav navbar-right">
+     <div> <button id="myBtn" style="background-color: #FE2E2E; padding: 0;
+border: none;
+background: none;
+"><li>
+          <a  class="nav-link" href="#" style="color: black"><svg class="bi bi-cart4" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+      </svg><b> Giỏ Hàng</b></a>
+    </li></button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header"> <h2>Giỏ Hàng Của Bạn</h2>
+      <span class="close">&times;</span>
+     
+    </div>
+    <div class="container"> 
+ <table id="cart" class="table table-hover table-condensed"> 
+  <thead> 
+   <tr> 
+    <th></th>
+    <th style="width:50%">Tên sản phẩm</th> 
+    <th style="width:10%">Giá</th> 
+    <th style="width:8%">Số lượng</th> 
+    <th style="width:22%" class="text-center">Thành tiền</th> 
+    <th style="width:10%"> </th> 
+   </tr> 
+   <tr>
+    <th>
+      <img class="cart-item-image" src="anh/hawaii.jpg" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Pizza Hawaii</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">120000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i></button>
+    </th>
+                          
+      </tr>
+      <tr>
+    <th>
+      <img class="cart-item-image" src="anh/haisan.jpg" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Pizza Hải sản</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">135000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i></button>
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <img class="cart-item-image" src="anh/pepsi.jpg" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Pepsi</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">9000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i></button>
+    </th>
+                          
+      </tr>
+      <tr>
+    <th>
+      <img class="cart-item-image" src="anh/KhuyenMai/1.png" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Combo 1</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">157000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i> </button>
+    </th>
+                          
+      </tr>
+  </thead> 
+  <tfoot> 
+   
+   <tr> 
+    <td><a href="SanPham.html" class="btn btn-warning" style="width: 200px"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+    </td> 
+     <td></td><td></td><td></td>
+    <td><a href="#" onclick="alert('Thanh toán thành công!')" class="btn btn-success btn-block" style="width: 150px;">Thanh toán  <i class="fa fa-angle-right"></i> </a>
+    </td> 
+   </tr> 
+  </tfoot> 
+ </table>
+</div>
+  </div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script></div>
+</div>
+    <li >
+      <a  class="nav-link" href="DangNhap.html" style="color: black"><b>Đăng Nhập</b></a>
+      </li>
+    <li>
+      <a  class="nav-link" href="DangKi.html" style="color: black"><b>Đăng Ký</b></a>
+    </li>
+      </ul>
+    </div>
+
+</nav><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+    	<h2> <b> PIZZA CÓ NGUỒN GỐC TỪ ĐÂU ???</b></h2><br><br>
+    	<h4>Pizza là món ăn đáng tự hào của ẩm thực Ý, được ưa chuộng ở nhiều quốc gia.</h4><br>
+    	<h4>Capricciosa – Nhà hàng pizza & pasta Ý truyền thống sẽ kể cho bạn nghe câu chuyện về sự ra đời của chiếc bánh pizza, đại sứ của văn hóa ẩm thực nước Ý. Bạn có biết về nguồn gốc của loại bánh nổi tiếng này? Cho đến ngày nay người ta vẫn còn tranh cãi về nguồn gốc ra đời của Pizza. Một số tư liệu cho rằng, Pizza có tiền thân là những chiếc bánh làm bằng bột mì được nướng trên những phiến đá phẳng, nóng xuất hiện lần đầu tiên và trở nên phổ biến tại Napoli – Ý vào khoảng 1000 năm trước. Một số tài liệu khác lại nói rằng người Roman (La Mã cổ đại) và người Phoenici của xứ Hy Lạp là những người đầu tiên đã chế biến thành công pizza do họ biết được bí mật của công thức nhào bột với nước và nướng bánh trên đá.</h4><br>
+    	
+    </div>
+    <div class="col-5" >
+    	<img src="anh/nggoc.jpg" alt="" style="width: 600px"><br>
+    </div>
+  </div>
+</div>
+ <div class="container">
+<div class="row">
+    
+    	<br>
+    	<h4>“Tổ tiên” của chiếc bánh Pizza bắt đầu xuất hiện từ thời kỳ đồ đá, nó bắt nguồn từ những miếng bánh mỳ khô được nướng trên đá nóng còn sót lại từ các đám cháy. Sau đó, để tận dụng những thức ăn còn dư, con người đã để hết lên trên bề mặt bánh mỳ rồi ăn. Chính vì lý do này, người Ý đã coi pizza là món ăn tiết kiệm và cực kỳ thuận tiện, một “fast food” chính hiệu!</h4><br>
+    	<h4>Pizza hiện đại ra đời vào năm 1889 khi nữ hoàng Margherita Teresa Giovanni, hoàng hậu của vua Umberto I của Ý đến thăm Napoli. Raffaele Esposito – chủ quán rượu Pietro Il Pizzaiolo đã được yêu cầu chuẩn bị làm một món ăn đặc biệt để đón tiếp hoàng hậu. Esposito đã làm một chiếc bánh pizza với cà chua, phó mát mozzarella (một loại phó mát được làm từ sữa trâu) và húng quế, những thành phần đã tạo nên ba màu đỏ, trắng và xanh lá cây tượng trưng cho quốc kì Ý. Ông đã đặt tên cho chiếc pizza đó là Margherita. Sau đó, người Ý ở các vùng khác đã nghĩ ra các loại nhân khác nhau và sáng tạo nên những loại bánh pizza mang đặc trưng riêng của từng vùng. Nhưng loại bánh có tên của một nữ hoàng này vẫn được xem như loại pizza “chính thống” của nước Ý cũng như các nước trên thế giới.</h4><br>
+  </div></div><br>
+  <div class="container">
+  <div class="row">
+    <div class="col-7">
+    	<h4>Mỗi quốc gia, người ta lại tạo cho những chiếc bánh những đặc trưng ẩm thực riêng phù hợp với văn hóa ẩm thực của quốc gia đó, như Thái Lan chẳng hạn, người ta đã sáng tạo thêm kiểu pizza tom yum (tôm chua cay). Còn pizza kiểu Ấn thì được chế biến với thịt gà cà ri, pizza ở Thổ Nhĩ Kỳ có thịt bằm, ôliu đỏ, hành tây. Pizza Đức thì không thể thiếu các kiểu xúc xích làm topping. Pizza Tây Ban Nha có đậu và bắp… Khi về đến Việt Nam, để phù hợp với khẩu vị của người Việt thì các món pizza được biến tấu theo nhiều phong cách du nhập từ phương Tây: từ những loại bánh thông thường làm từ thịt thăn, xúc xích, cá ngừ cho đến những loại bảnh hảo hạng được chế biến đặc biệt từ cá hồi xông khói, thịt lợn rừng… trong đó đặc biệt phải kể tới món pizza hải sản gồm có xốt cà và nướng chung với mực và tôm địa phương.</h4><br>
+    	<h4>Nhưng dù là thế nào đi nữa thì một chiếc pizza đúng chuẩn phải có lớp bánh giòn tan. Bạn có thể lựa chọn cho mình pizza vỏ dày hoặc vỏ mỏng tùy theo khẩu vị hay sở thích riêng. Với những người thích ăn ít nhân, ít phô mai hơn thì hãy chọn vỏ dày. Với những người sành ăn pizza, họ sẽ gọi pizza vỏ mỏng với nhiều phô mai và nhân hơn đế bánh mềm mượt hòa quyện cùng nhân, tạo nên một mùi vị khó quên.</h4>
+    	
+    </div>
+    <div class="col-5">
+    	<img src="anh/haisan.jpg" alt="" style="width: 600px"><br>
+    </div>
+  </div>
+</div><br><hr><br>
+<footer class="footer-area black-bg pt-60">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="footer-logo text-center">
+                        <a href="index.html"><img src="anh/logo.png" alt="footer-logo"></a>
+                        <p>NGON SẠCH RẺ KHỎE <br> Pizza ngon là CIKPAH</p>
+                    </div><br><br><hr>
+                    <div class="col">
+      <form action="mailto: lethiphuongluong181220@gmail.com" method="get">
+		<center>
+			<table border="1" cellpadding="9px">
+				<td>
+					<center>
+						<b>HỘP THƯ GÓP Ý</b>
+					
+					</center><br>
+				    <b>Họ và tên&emsp;:</b> <input cols="70" type="text" name="subject" id="subject"><br> <br>
+					<b>Email&emsp;&emsp;&emsp;:</b>   <input type="text" name=""> <br><br>
+					<b>Nội dung góp ý</b> <br>
+					<textarea rows="7" cols="90" name="body" id="body" ></textarea>
+					<center>
+						<small><b>Cảm ơn đóng góp ý kiến của quý khách</b></small><br>
+						<form style="position: absolute;
+						             top: 50%;
+                                     left: 50%;
+                                     width: 300px;
+                                     height: 1.4em;
+                                     margin-top: -3.7em;
+                                     margin-left: -180px;">
+                           <input value="Gửi" type="submit">
+                        </form>          
+					</center>
+				</td>
+			</table>
+		</center>
+	</form>
+    </div><hr>
+                    <div class="support-area d-flex flex-wrap justify-content-between">
+                        <div class="single-support mb-all-40">
+                            <div class="support-icon">
+                                <img src="anh/mail.png" alt="support-icon">
+                            </div>
+                            <div class="support-desc">
+                                <h1> ltpluong.19it3@sict.udn.vn</h1>
+                                <h1>htylinh.19it3@sict.udn.vn</h1>
+                            </div>
+                        </div>
+                        <div class="single-support mb-all-40">
+                            <div class="support-icon">
+                                <img src="anh/fb.png" alt="support-icon">
+                            </div>
+                            <div class="support-desc">
+                                <h1><a href="https://www.facebook.com/profile.php?id=100008387294906" style="color: red">Lương Lê</a></h1>
+                                <h1><a href="https://www.facebook.com/profile.php?id=100012882978336" style="color: red">Huỳnh Yến Linh</a></h1>
+                            </div>
+                        </div>
+                        <div class="single-support">
+                            <div class="support-icon">
+                                <img src="anh/goi.png" alt="support-icon">
+                            </div>
+                            <div class="support-desc">
+                                <h1>0989055432</h1>
+                                <h1>0345852654</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+          <div class="container-fluid">
+
+  <div class="row">
+    <div class="col">
+      
+    </div>
+    <div class="col-6">
+      <div style="background-color:  #E0F8F7"  style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="anh/vitri.png" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Địa chỉ</h5>
+        <p class="card-text">478 Trần Đại Nghĩa - Ngũ Hành Sơn - Đà Nẵng</p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col">
+      
+    </div>
+  </div></div>
+</footer>
+</body>
+</html>

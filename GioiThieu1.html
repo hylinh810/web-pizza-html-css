@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>CIKPAH</title>
+	<meta charset="utf-8">
+  <link rel="shortcut icon" type="C:/Users/Admin/Downloads/logo.ico" href="/favicon.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="container-fluid"> </div>
+<nav class="navbar navbar-inverse navbar-expand-xl  navbar-dark sticky-top">
+  <a class="navbar-brand" href="">
+  	<img src="anh/logo.png" alt="Logo" style="width:80px;">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav navbar-nav navbar-right">
+        <a class="nav-link" href="TrangChu1.html"><b class="mau">TRANG CHỦ</b> </a>
+      </li>
+      <li class="nav-item active">
+      	<a class="nav-link" href="GioiThieu1.html"><b> GIỚI THIỆU</b></a>
+      </li>
+      <li class="nav navbar-nav navbar-right">
+      	<a class="nav-link" href="SanPham1.html"><b class="mau">SẢN PHẨM</b></a>
+      </li>
+      <li class="nav navbar-nav navbar-right">
+      	<a class="nav-link" href="KhuyenMai1.html"><b class="mau">KHUYẾN MÃI</b></a>
+      </li>
+  </ul>
+</div>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <div >
+         <form class="form-inline my-2 my-lg-0">
+      
+      <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+      <a href="SanPham1.html" class="btn2"><i class="fa fa-search"></i></a>
+    </form>
+      </div>&emsp;
+
+      <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+    <!-- Giỏ hàng -->
+    <div >
+      <ul class="nav navbar-nav navbar-right">
+      <div><button id="myBtn" style="background-color: #FE2E2E; padding: 0;
+border: none;
+background: none;
+"><li>
+          <a  class="nav-link" href="#" style="color: black"><svg class="bi bi-cart4" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+      </svg><b> Giỏ Hàng</b></a>
+    </li></button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header"> <h2>Giỏ Hàng Của Bạn</h2>
+      <span class="close">&times;</span>
+     
+    </div>
+    <div class="container"> 
+ <table id="cart" class="table table-hover table-condensed"> 
+  <thead> 
+   <tr> 
+    <th></th>
+    <th style="width:50%">Tên sản phẩm</th> 
+    <th style="width:10%">Giá</th> 
+    <th style="width:8%">Số lượng</th> 
+    <th style="width:22%" class="text-center">Thành tiền</th> 
+    <th style="width:10%"> </th> 
+   </tr> 
+   <tr>
+    <th>
+      <img class="cart-item-image" src="anh/hawaii.jpg" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Pizza Hawaii</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">120000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i></button>
+    </th>
+                          
+      </tr>
+      <tr>
+    <th>
+      <img class="cart-item-image" src="anh/haisan.jpg" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Pizza Hải sản</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">135000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i></button>
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <img class="cart-item-image" src="anh/pepsi.jpg" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Pepsi</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">9000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i></button>
+    </th>
+                          
+      </tr>
+      <tr>
+    <th>
+      <img class="cart-item-image" src="anh/KhuyenMai/1.png" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Combo 1</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">157000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i> </button>
+    </th>
+                          
+      </tr>
+  </thead> 
+  <tfoot> 
+   
+   <tr> 
+    <td><a href="SanPham.html" class="btn btn-warning" style="width: 200px"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+    </td> 
+     <td></td><td></td><td></td>
+    <td><a href="#" onclick="alert('Thanh toán thành công!')" class="btn btn-success btn-block" style="width: 150px;">Thanh toán  <i class="fa fa-angle-right"></i> </a>
+    </td> 
+   </tr> 
+  </tfoot> 
+ </table>
+</div>
+  </div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script></div>
+</div>
+    <li class="nav-item dropdown">
+        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action" style="color: black"><img src="anh/avatar.jpg" class="aab" alt="Avatar"  style="width: 25px"> Hy Linh <strong class="caret"></strong></a>
+        <ul class="dropdown-menu">
+          <li><a href="HoSo.html" class="dropdown-item"><i class="fa fa-user-o"></i>Hồ sơ</a></li>
+          <li class="divider dropdown-divider"></li>
+          <li><a href="TrangChu.html" class="dropdown-item"><i class="material-icons violet">&#xE8AC;</i>Đăng xuất</a></li>
+        </ul>
+      </li>
+      </ul>
+    </div>
+
+</nav>
+<div class="container-fluid">
+  <table>
+    <tr>
+      <td>
+        <img src="anh/cauhoi.png">
+      </td>
+      <th>
+        <td>
+          <h1><a href="NguonGoc1.html" style="color: black">- Bạn có biết Pizza bắt nguồn từ đâu?</a></h1>
+          <h1><a href="CachLam1.html" style="color: black">- Có khi nào bạn thắc mắc đầu bếp làm Pizza như thế nào?</a></h1>
+          <h1><a href="HinhTron1.html" style="color: black">-  Tại sao Pizza có hình tròn?</a></h1>
+        </td>
+      </th>
+    </tr>
+  </table>
+  <hr>
+</div>
+<div class="container-fluid">
+<div class="row row-cols-4">
+    <div class="col"><svg class="bi bi-award-fill" width="20em" height="6em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8 0l1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
+  <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+</svg>
+<br>
+<br>
+<h1 style="color: red; font-size: 30px">Chất lượng hàng đầu</h1>
+<br>
+<p>Chú trọng khâu tuyển chọn đội ngũ đầu bếp chuyên nghiệp, thực đơn của CIKPAH luôn được đổi mới, đa dạng với pizza nhiều hương vị, sandwich, mỳ ý và các món ăn nhanh khác.</p>
+</div>
+    <div class="col">
+    	<svg class="bi bi-watch" width="20em" height="6em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M4 14.333v-1.86A5.985 5.985 0 0 1 2 8c0-1.777.772-3.374 2-4.472V1.667C4 .747 4.746 0 5.667 0h4.666C11.253 0 12 .746 12 1.667v1.86A5.985 5.985 0 0 1 14 8a5.985 5.985 0 0 1-2 4.472v1.861c0 .92-.746 1.667-1.667 1.667H5.667C4.747 16 4 15.254 4 14.333zM13 8A5 5 0 1 0 3 8a5 5 0 0 0 10 0z"/>
+  <rect width="1" height="2" x="13.5" y="7" rx=".5"/>
+  <path fill-rule="evenodd" d="M8 4.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H6a.5.5 0 0 1 0-1h1.5V5a.5.5 0 0 1 .5-.5z"/>
+</svg>
+<br>
+<br>
+<h1 style="color: red; font-size: 30px">Giao hàng đúng giờ</h1>
+<br>
+<p>Để tăng cường sự tin tưởng và yên tâm với khách hàng, CIKPAH cam kết luôn giao hàng đúng giờ và chi phí giao hàng rẻ nhất để đảm bảo khách hàng có thể nhận bánh trong thời gian nhanh nhất.</p>
+    </div>
+    <div class="col">
+    	<svg class="bi bi-shop" width="20em" height="6em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M0 15.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zM3.12 1.175A.5.5 0 0 1 3.5 1h9a.5.5 0 0 1 .38.175l2.759 3.219A1.5 1.5 0 0 1 16 5.37v.13h-1v-.13a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.13H0v-.13a1.5 1.5 0 0 1 .361-.976l2.76-3.22z"/>
+  <path d="M2.375 6.875c.76 0 1.375-.616 1.375-1.375h1a1.375 1.375 0 0 0 2.75 0h1a1.375 1.375 0 0 0 2.75 0h1a1.375 1.375 0 1 0 2.75 0h1a2.375 2.375 0 0 1-4.25 1.458 2.371 2.371 0 0 1-1.875.917A2.37 2.37 0 0 1 8 6.958a2.37 2.37 0 0 1-1.875.917 2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.5h1c0 .76.616 1.375 1.375 1.375z"/>
+  <path d="M4.75 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm3.75 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm3.75 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+  <path fill-rule="evenodd" d="M2 7.846V7H1v.437c.291.207.632.35 1 .409zm-1 .737c.311.14.647.232 1 .271V15H1V8.583zm13 .271a3.354 3.354 0 0 0 1-.27V15h-1V8.854zm1-1.417c-.291.207-.632.35-1 .409V7h1v.437zM3 9.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5V15H7v-5H4v5H3V9.5zm6 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-4zm1 .5v3h2v-3h-2z"/>
+</svg>
+<br>
+<br>
+<h1 style="color: red; font-size: 30px">CIKPAH</h1>
+<br>
+<p>Lựa chọn cho mình một hướng đi mới để tạo nên sự khác biệt, mô hình CIKPAH - pizza mang đi giúp khách hàng tiết kiệm thời gian, đem đến sự tiện lợi tối ưu trong việc lựa chọn, thanh toán, đóng gói và nhận hàng.</p>
+    </div>
+    <div class="col"><svg class="bi bi-emoji-laughing" width="20em" height="6em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  <path fill-rule="evenodd" d="M12.331 9.5a1 1 0 0 1 0 1A4.998 4.998 0 0 1 8 13a4.998 4.998 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5z"/>
+  <path d="M7 6.5c0 .828-.448 0-1 0s-1 .828-1 0S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 0-1 0s-1 .828-1 0S9.448 5 10 5s1 .672 1 1.5z"/>
+</svg>
+<br>
+<br>
+<h1 style="color: red; font-size: 30px">Phục vụ chuyên nghiệp</h1>
+<br>
+<p> CIKPAH mang đầy sức trẻ và nhiệt huyết, CIKPAH luôn mong muốn đem lại cho khách hàng của mình chất lượng dịch vụ tốt nhất, luôn lắng nghe và chăm sóc những nhu cầu dù là nhỏ nhất của Quý khách.</p>
+</div>
+  </div>
+  </div></div>
+  <hr>
+  <footer class="footer-area black-bg pt-60">
+             <div class="container">
+                <div class="footer-top">
+                    <div class="footer-logo text-center">
+                        <a href="index.html"><img src="anh/logo.png" alt="footer-logo"></a>
+                        <p>NGON SẠCH RẺ KHỎE <br> Pizza ngon là CIKPAH</p>
+                    </div> <br><br><hr>
+                    <div class="col">
+      <form action="mailto: lethiphuongluong181220@gmail.com" method="get">
+    <center>
+      <table border="1" cellpadding="9px">
+        <td>
+          <center>
+            <b>HỘP THƯ GÓP Ý</b>
+          
+          </center><br>
+            <b>Họ và tên&emsp;:</b> <input cols="70" type="text" name="subject" id="subject"><br> <br>
+          <b>Email&emsp;&emsp;&emsp;:</b>   <input type="text" name=""> <br><br>
+          <b>Nội dung góp ý</b> <br>
+          <textarea rows="7" cols="90" name="body" id="body" ></textarea>
+          <center>
+            <small><b>Cảm ơn đóng góp ý kiến của quý khách</b></small><br>
+            <form style="position: absolute;
+                         top: 50%;
+                                     left: 50%;
+                                     width: 300px;
+                                     height: 1.4em;
+                                     margin-top: -3.7em;
+                                     margin-left: -180px;">
+                           <input value="Gửi" type="submit">
+                        </form>          
+          </center>
+        </td>
+      </table>
+    </center>
+  </form>
+    </div><hr>
+                    <div class="support-area d-flex flex-wrap justify-content-between">
+                        <div class="single-support mb-all-40">
+                            <div class="support-icon">
+                                <img src="anh/mail.png" alt="support-icon">
+                            </div>
+                            <div class="support-desc">
+                                <h1>ltpluong.19it3@sict.udn.vn</h1>
+                                <h1>htylinh.19it3@sict.udn.vn</h1>
+                            </div>
+                        </div>
+                        <div class="single-support mb-all-40">
+                            <div class="support-icon">
+                                <img src="anh/fb.png" alt="support-icon">
+                            </div>
+                            <div class="support-desc">
+                               <h1><a href="https://www.facebook.com/profile.php?id=100008387294906" style="color: red">Lương Lê</a></h1>
+                                <h1><a href="https://www.facebook.com/profile.php?id=100012882978336" style="color: red">Huỳnh Yến Linh</a></h1>
+                            </div>
+                        </div>
+                        <div class="single-support">
+                            <div class="support-icon">
+                                <img src="anh/goi.png" alt="support-icon">
+                            </div>
+                            <div class="support-desc">
+                                <h1>0989055432</h1>
+                                <h1>0345852654</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+    <div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      
+    </div>
+    <div class="col-6">
+      <div style="background-color:  #E0F8F7"  style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="anh/vitri.png" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Địa chỉ</h5>
+        <p class="card-text">478 Trần Đại Nghĩa - Ngũ Hành Sơn - Đà Nẵng</p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col">
+      
+    </div>
+  </div>
+</div>
+</div></footer>
+</body>
+</html>

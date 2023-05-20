@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CIKPAH</title>
+	<meta charset="utf-8">
+  <link rel="shortcut icon" type="C:/Users/Admin/Downloads/logo.ico" href="/favicon.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <style type="text/css">
+  	.col-md-4 img{
+	width: 200px;
+	height: auto;
+}
+.col-6{
+	background-color: #E0F8F7;
+}
+.col-6 img{
+	width:300px;
+}
+h1{
+  		font-size: 20px;  
+  		
+  		text-align: content;
+  	}
+
+h2{
+	font-size: 30px;
+}
+p{
+  		font-size: 15px;
+  	}
+  </style>
+</head>
+<body>
+	<div class="container-fluid"> </div>
+<nav class="navbar navbar-inverse navbar-expand-xl  navbar-dark sticky-top">
+  <a class="navbar-brand" href="">
+  	<img src="anh/logo.png" alt="Logo" style="width:80px;">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav navbar-nav navbar-right">
+        <a class="nav-link" href="TrangChu1.html"><b class="mau">TRANG CHỦ</b> </a>
+      </li>
+      <li class="nav-item active">
+      	<a class="nav-link" href="GioiThieu1.html"><b> GIỚI THIỆU</b></a>
+      </li>
+      <li class="nav navbar-nav navbar-right">
+      	<a class="nav-link" href="SanPham1.html"><b class="mau">SẢN PHẨM</b></a>
+      </li>
+      <li class="nav navbar-nav navbar-right">
+      	<a class="nav-link" href="KhuyenMai1.html"><b class="mau">KHUYẾN MÃI</b></a>
+      </li>
+  </ul>
+</div>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <div >
+         <form class="form-inline my-2 my-lg-0">
+      
+      <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+      <a href="SanPham1.html" class="btn2"><i class="fa fa-search"></i></a>
+    </form>
+      </div>&emsp;
+
+      <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+    <!-- Giỏ hàng -->
+    <div >
+      <ul class="nav navbar-nav navbar-right">
+     <div> <button id="myBtn" style="background-color: #FE2E2E; padding: 0;
+border: none;
+background: none;
+"><li>
+          <a  class="nav-link" href="#" style="color: black"><svg class="bi bi-cart4" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+      </svg><b> Giỏ Hàng</b></a>
+    </li></button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header"> <h2>Giỏ Hàng Của Bạn</h2>
+      <span class="close">&times;</span>
+     
+    </div>
+    <div class="container"> 
+ <table id="cart" class="table table-hover table-condensed"> 
+  <thead> 
+   <tr> 
+    <th></th>
+    <th style="width:50%">Tên sản phẩm</th> 
+    <th style="width:10%">Giá</th> 
+    <th style="width:8%">Số lượng</th> 
+    <th style="width:22%" class="text-center">Thành tiền</th> 
+    <th style="width:10%"> </th> 
+   </tr> 
+   <tr>
+    <th>
+      <img class="cart-item-image" src="anh/hawaii.jpg" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Pizza Hawaii</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">120000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i></button>
+    </th>
+                          
+      </tr>
+      <tr>
+    <th>
+      <img class="cart-item-image" src="anh/haisan.jpg" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Pizza Hải sản</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">135000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i></button>
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <img class="cart-item-image" src="anh/pepsi.jpg" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Pepsi</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">9000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i></button>
+    </th>
+                          
+      </tr>
+      <tr>
+    <th>
+      <img class="cart-item-image" src="anh/KhuyenMai/1.png" width="100" height="100">
+    </th>  
+    <th>
+      <span class="cart-item-title">Combo 1</span>
+    </th>
+    <th>
+      <span class="cart-price cart-column">157000đ</span>
+    </th>
+    <th>
+      <input class="cart-quantity-input" type="number" value="1">
+    </th>
+    <th></th>
+    <th>
+      <button class="btn1"><i class="fa fa-trash"></i> </button>
+    </th>
+                          
+      </tr>
+  </thead> 
+  <tfoot> 
+   
+   <tr> 
+    <td><a href="SanPham.html" class="btn btn-warning" style="width: 200px"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+    </td> 
+     <td></td><td></td><td></td>
+    <td><a href="#" onclick="alert('Thanh toán thành công!')" class="btn btn-success btn-block" style="width: 150px;">Thanh toán  <i class="fa fa-angle-right"></i> </a>
+    </td> 
+   </tr> 
+  </tfoot> 
+ </table>
+</div>
+  </div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script></div>
+</div>
+    <li class="nav-item dropdown">
+        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action" style="color: black"><img src="anh/avatar.jpg" class="aab" alt="Avatar"  style="width: 25px"> Hy Linh <strong class="caret"></strong></a>
+        <ul class="dropdown-menu">
+          <li><a href="HoSo.html" class="dropdown-item"><i class="fa fa-user-o"></i>Hồ sơ</a></li>
+          <li class="divider dropdown-divider"></li>
+          <li><a href="TrangChu.html" class="dropdown-item"><i class="material-icons violet">&#xE8AC;</i>Đăng xuất</a></li>
+        </ul>
+      </li>
+      </ul>
+    </div>
+
+</nav><br><br>
+<div class="row">
+    <div class="col-6 col-md-3">
+    	<img src="anh/xucxich1.png" alt="" style="width: 370px"><br><br><br><br><br><br><br><br>
+    	<img src="anh/haisan.jpg" alt= "" style="width: 370px">
+    </div>
+    <div class="col-6 col-md-6">
+    	<h2> <center><b>CÁCH LÀM PIZZA TẠI NHÀ</b></center></h2><br>
+    	<p>Bởi pizza hải sản không chỉ là một món ăn hấp dẫn, hợp thời mà còn đảm bảo được chất dinh dưỡng để cung cấp năng lượng cho cơ thể, vì vậy hiện nay có rất nhiều các chị em phụ nữ đã “trổ tài” làm pizza hải sản tại nhà. Nguyên liệu của pizza hải sản rất dễ tìm và các bước làm pizza cũng khá đơn giản, nên bạn đọc hãy thử tài nấu ăn của mình qua pizza hải sản xem sao nhé!</p><br>
+    	<h1><b>Chuẩn bị nguyên liệu</b></h1> <br>
+    	<p>Bạn cần chuẩn bị bột mì(200gr), pho mat, nước ấm(1 bát), nước nguội(1 bát), dầu ô- liu(30ml), đường(50gr), bơ(1 muỗng cà phê), muối(1 muỗng cà phê), vani(1 muỗng), cà chua (2 quả), ớt, hành tây…Về phần hải sản, hãy chuẩn bị linh động các gia vị mà bạn muốn ăn nhé ví dụ như tôm, mực, cua, cá… tùy theo sở thích.</p><br>
+    	<h1>Các bước làm pizza hải sản:</h1><br>
+    	<p><b>– Bước 1: </b>Bạn đun nước sôi. Trộn các gia vị như muối đường và để ấm trong vòng 10-15 phút cho đến khi men sủi bọt. Sau đó cho bột vào một cái khay vừa kích thước bánh và tạo một chũng ở giữa. Tiếp theo, bạn thêm dầu và khuấy bằng thìa  cho đến khi hỗn hợp quện lại với nhau(có độ sệt), bạn nhào bột nhẹ nhàng khoảng 10 phút.<br>
+        <b>– Bước 2:</b> Quết dầu lên khay đựng bột đã tạo hình, bọc hỗn hợp bột bằng ni lông và ủ ở nhiệt độ ấm trong vòng 45 phút cho đến khi bột nở ra gấp đôi. Đấm bột để ra hết không khí, sau đó tiến hành cán bột theo kích thước bạn chọn. Phết dầu ăn lên khay nướng bánh. Nướng trong lò với nhiệt độ lên tới 220°C. Thời gian chờ đế bánh chính là lúc các độc giả bắt tay vào làm nhân. Hãy thái hải sản và các nguyên liệu khác thật nhỏ và mỏng để có thể dễ dàng rắc lên trên bánh.<br>
+        <b>– Bước 3:</b> Phủ lên đế bánh lớp xốt cà chua, sau đó rắc đều nhân đã chuẩn bị và pho mát lên bề mặt.<br>
+        <b>– Bước 4:</b> Tiếp tục nướng khoảng 15-20 phút cho đến khi đế bánh chín vàng. Và cuối cùng là chuyên mục trang trí thỏa thích lên chiếc bánh pizza hải sản do chính tay bạn làm ra.</p><br>
+        <h1><b>VIDEO HƯỚNG DẪN</b></h1><br>
+        <iframe width="610" height="313" src="https://www.youtube.com/embed/Lw9figB0EMc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	
+    </div>
+    <div class="col-6 col-md-3">
+    	<img src="anh/nggoc.jpg" alt=""><br><br><br><br><br><br><br><br>
+    	<img src="anh/nam.jpg" alt="">
+    </div>
+  </div><br><hr><br>
+<footer class="footer-area black-bg pt-60">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="footer-logo text-center">
+                        <a href="index.html"><img src="anh/logo.png" alt="footer-logo"></a>
+                        <p>NGON SẠCH RẺ KHỎE <br> Pizza ngon là CIKPAH</p>
+                    </div><br><br><hr>
+                    <div class="col">
+      <form action="mailto: lethiphuongluong181220@gmail.com" method="get">
+		<center>
+			<table border="1" cellpadding="9px">
+				<td>
+					<center>
+						<b>HỘP THƯ GÓP Ý</b>
+					
+					</center><br>
+				    <b>Họ và tên&emsp;:</b> <input cols="70" type="text" name="subject" id="subject"><br> <br>
+					<b>Email&emsp;&emsp;&emsp;:</b>   <input type="text" name=""> <br><br>
+					<b>Nội dung góp ý</b> <br>
+					<textarea rows="7" cols="90" name="body" id="body" ></textarea>
+					<center>
+						<small><b>Cảm ơn đóng góp ý kiến của quý khách</b></small><br>
+						<form style="position: absolute;
+						             top: 50%;
+                                     left: 50%;
+                                     width: 300px;
+                                     height: 1.4em;
+                                     margin-top: -3.7em;
+                                     margin-left: -180px;">
+                           <input value="Gửi" type="submit">
+                        </form>          
+					</center>
+				</td>
+			</table>
+		</center>
+	</form>
+    </div><hr>
+                    <div class="support-area d-flex flex-wrap justify-content-between">
+                        <div class="single-support mb-all-40">
+                            <div class="support-icon">
+                                <img src="anh/mail.png" alt="support-icon">
+                            </div>
+                            <div class="support-desc">
+                                <h1> ltpluong.19it3@sict.udn.vn</h1>
+                                <h1>htylinh.19it3@sict.udn.vn</h1>
+                            </div>
+                        </div>
+                        <div class="single-support mb-all-40">
+                            <div class="support-icon">
+                                <img src="anh/fb.png" alt="support-icon">
+                            </div>
+                            <div class="support-desc">
+                                <h1><a href="https://www.facebook.com/profile.php?id=100008387294906" style="color: red">Lương Lê</a></h1>
+                                <h1><a href="https://www.facebook.com/profile.php?id=100012882978336" style="color: red">Huỳnh Yến Linh</a></h1>
+                            </div>
+                        </div>
+                        <div class="single-support">
+                            <div class="support-icon">
+                                <img src="anh/goi.png" alt="support-icon">
+                            </div>
+                            <div class="support-desc">
+                                <h1>0989055432</h1>
+                                <h1>0345852654</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+          <div class="container-fluid">
+
+  <div class="row">
+    <div class="col">
+      
+    </div>
+    <div class="col-6">
+      <div style="background-color:  #E0F8F7"  style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="anh/vitri.png" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Địa chỉ</h5>
+        <p class="card-text">478 Trần Đại Nghĩa - Ngũ Hành Sơn - Đà Nẵng</p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col">
+      
+    </div>
+  </div></div>
+</footer>
+</body>
+</html>
